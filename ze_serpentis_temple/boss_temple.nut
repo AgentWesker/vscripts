@@ -11,7 +11,8 @@ function RunLogic() {
 	if (logicToggle == 1)
 	{
 		posvec <- Vector(0.0, 0.0, 0.0);
-
+		posvec = entPlayer.GetOrigin();
+		posvec.z = posvec.z + 7.0;
 		
 		entChicken.SetOrigin(posvec);
 		//entChicken.SetHealth(90000000);
@@ -33,8 +34,7 @@ function TargetPlayer() {
 		while((entPlayer = Entities.FindByClassname(entPlayer, "player")) != null)
 		{
 			if ((entPlayer.GetTeam() == 3) && (entPlayer.GetHealth() > 0)) {
-				posvec = entPlayer.GetOrigin();
-				posvec.z = posvec.z + 7.0;
+
 				ValidPlayer = true;
 				break;
 			}
